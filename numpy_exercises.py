@@ -5,6 +5,8 @@ a = np.array([4, 10, 12, 23, -2, -1, 0, 0, 0, -6, 3, -7])
 #1
 sum_pos = np.sum(a > 0)
 sum_pos
+
+a.sum()
 #2
 sum_neg = np.sum(a < 0)
 sum_neg
@@ -168,33 +170,60 @@ np.shape(b)
 
 # Exercise 10 - transpose the array b.
 
+np.transpose(b)
+
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
+
+b.reshape(1,6)
 
 # Exercise 12 - reshape the array b to be a list of 6 lists, each containing only 1 number (6 x 1)
 
+np.reshape(b, (6,1)) 
+
 ## Setup 3
-c = [
+c = np.array([
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
-]
+])
 
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
 
+c.sum()
+np.min(c)
+np.max(c)
+np.prod(c)
+
 # Exercise 2 - Determine the standard deviation of c.
+
+np.std(c)
 
 # Exercise 3 - Determine the variance of c.
 
+c.var()
+
 # Exercise 4 - Print out the shape of the array c
+
+np.shape(c)
 
 # Exercise 5 - Transpose c and print out transposed result.
 
-# Exercise 6 - Get the dot product of the array c with c. 
+print(c.transpose())
+
+# Exercise 6 - Get the dot product of the array c with c.
+
+c.dot(c) 
 
 # Exercise 7 - Write the code necessary to sum up the result of c times c transposed. Answer should be 261
 
+(c*c.transpose()).sum()
+
+np.sum(c*(c.transpose()))
+
 # Exercise 8 - Write the code necessary to determine the product of c times c transposed. Answer should be 131681894400.
+
+np.prod(c*(c.transpose()))
 
 
 ## Setup 4
@@ -204,22 +233,47 @@ d = [
     [60, 45, -45, 90, -45, 180]
 ]
 
+d = np.array([
+    [90, 30, 45, 0, 120, 180],
+    [45, -90, -30, 270, 90, 0],
+    [60, 45, -45, 90, -45, 180]
+])
+
 # Exercise 1 - Find the sine of all the numbers in d
+
+np.sin(d)
 
 # Exercise 2 - Find the cosine of all the numbers in d
 
+np.cos(d)
+
 # Exercise 3 - Find the tangent of all the numbers in d
+
+np.tan(d)
 
 # Exercise 4 - Find all the negative numbers in d
 
+(d[d<0])
+
 # Exercise 5 - Find all the positive numbers in d
+
+(d[d>0])
 
 # Exercise 6 - Return an array of only the unique numbers in d.
 
+np.unique(d)
+
 # Exercise 7 - Determine how many unique numbers there are in d.
 
+len(np.unique(d))
+
 # Exercise 8 - Print out the shape of d.
+print(d.shape)
 
 # Exercise 9 - Transpose and then print out the shape of d.
 
+print(np.shape(d.transpose()))
+
 # Exercise 10 - Reshape d into an array of 9 x 2
+
+d.reshape(9, 2)
