@@ -1,0 +1,9 @@
+env.py
+secrets.txt
+__pycache__/
+
+.ipynb_checkpoints/
+
+#Can't push > 100 MB to GithHUb
+*.csv
+
