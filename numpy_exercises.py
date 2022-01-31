@@ -8,18 +8,16 @@ sum_pos
 
 a.sum()
 #2
-sum_neg = np.sum(a < 0)
-sum_neg
+ len(a < 0)
 
 #3
-even_pos = np.sum((a > 0) % 2 == 0)
-even_pos
+((a > 0) % 2 == 0).size
+
 #4
-plus_3 = np.sum((a + 3) > 0)
-plus_3
+len((a + 3) > 0)
 
 #5
-squares = np.square (a[a >= 0])
+squares = a**2
 squares
 
 mean = np.mean(squares)
@@ -34,7 +32,7 @@ center_it = (a - the_mean)
 center_it
 
 #7
-zscore = (a - mean) / stddev
+zscore = (a - the_mean) / stddev
 zscore
 ##################################################
 
@@ -60,7 +58,7 @@ max_of_a = np.max(a)
 max_of_a
 
 # Exercise 4 - Make a variable named mean_of_a to hold the average of all the numbers in the above list
-mean_of_a = np.mean(a)
+mean_of_a = sum(a)/len(a)
 mean_of_a
 
 # Exercise 5 - Make a variable named product_of_a to hold the product of multiplying all the numbers in the above list together
@@ -166,11 +164,13 @@ evens_in_b
 
 # Exercise 9 - print out the shape of the array b.
 
-np.shape(b)
+b.shape
 
 # Exercise 10 - transpose the array b.
 
 np.transpose(b)
+
+b.T
 
 # Exercise 11 - reshape the array b to be a single list of 6 numbers. (1 x 6)
 
@@ -181,11 +181,13 @@ b.reshape(1,6)
 np.reshape(b, (6,1)) 
 
 ## Setup 3
-c = np.array([
+c = ([
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
 ])
+
+c = np.array(c)
 
 # HINT, you'll first need to make sure that the "c" variable is a numpy array prior to using numpy array methods.
 # Exercise 1 - Find the min, max, sum, and product of c.
@@ -211,6 +213,8 @@ np.shape(c)
 
 print(c.transpose())
 
+print(c.T)
+
 # Exercise 6 - Get the dot product of the array c with c.
 
 c.dot(c) 
@@ -221,9 +225,13 @@ c.dot(c)
 
 np.sum(c*(c.transpose()))
 
+(c* c.T).sum()
+
 # Exercise 8 - Write the code necessary to determine the product of c times c transposed. Answer should be 131681894400.
 
 np.prod(c*(c.transpose()))
+
+
 
 
 ## Setup 4
@@ -267,12 +275,15 @@ np.unique(d)
 
 len(np.unique(d))
 
+np.unique(d).size
+
 # Exercise 8 - Print out the shape of d.
 print(d.shape)
 
 # Exercise 9 - Transpose and then print out the shape of d.
 
 print(np.shape(d.transpose()))
+d.T.shape
 
 # Exercise 10 - Reshape d into an array of 9 x 2
 
